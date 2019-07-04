@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
-const { mongodb } = require('../.env')
+// const { mongodb } = require('../.env')
+const  mongodb  = 'mongodb+srv://agnsuporte:agnsuporte@cluster0-uo6in.mongodb.net/knowledge_stats?retryWrites=true&w=majority'
 
 mongoose.connect(mongodb, { useNewUrlParser: true })
     .catch(e => {
