@@ -17,10 +17,10 @@ consign()
     .then('./config/routes.js')
     .into(app)
 
-const myport = process.env.PORT || 4000
+// const myport = process.env.PORT || 4000
 
 // const callbk = () => {
 //     console.log('Port...: ', process.env.PORT || 4000)
 // }
 
-app.listen(myport, callbk)
+app.listen(process.env.PORT || 4000)
