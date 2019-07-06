@@ -1,14 +1,9 @@
 // const { db } = require('./.env')
+const connPG = process.env.DATABASE_URL
 
 module.exports = {
 	client: 'pg',
-	connection: {
-		host : 'ec2-50-19-221-38.compute-1.amazonaws.com',
-		port: 5432,
-		database: 'd9ae8dvvib0ioe',
-		user: 'gglihibjnfbkoj',
-		password: '2a84102e312937287fe6dda2247b536af4309aa2c41464a9022f637b630b72d3'
-	},
+	connection: process.env.DATABASE_URL, //db.pg,
 	pool: {
 		min: 2,
 		max: 10

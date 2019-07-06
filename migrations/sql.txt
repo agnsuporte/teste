@@ -1,0 +1,30 @@
+CREATE TABLE users(
+   id serial PRIMARY KEY,
+   name VARCHAR (255) NOT NULL,
+   email VARCHAR (255) UNIQUE NOT NULL,
+   password VARCHAR (255) NOT NULL,
+   admin BOOLEAN NOT NULL DEFAULT false
+);
+
+CREATE TABLE categories(
+   id serial PRIMARY KEY,
+   name VARCHAR (255) NOT NULL,
+   parent_id INTEGER  REFERENCES categories(id)
+);
+
+CREATE TABLE articles(
+   id serial PRIMARY KEY,
+   name VARCHAR (255) NOT NULL,
+   description VARCHAR (255) NOT NULL,
+   imageUrl VARCHAR (255),
+   content BYTEA NOT NULL,
+   user_id INTEGER  REFERENCES users(id) NOT NULL,
+   category_id INTEGER  REFERENCES categories(id) NOT NULL
+);
+
+INSERT INTO users (name, email, password, admin)
+VALUES
+   ('admin', 'admin@admin.com', '$2b$10$X3g7j.jdC3Xp5HPD.fT4derPUBRbOMdXf2j60NCqe69KYo16yM66q', true);
+ 
+ SELECT * FROM users;
+
