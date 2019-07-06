@@ -1,5 +1,5 @@
 // const { db } = require('./.env')
-const connPG = process.env.DATABASE_URL
+// const connPG = process.env.DATABASE_URL
 
 module.exports = {
 	client: 'pg',
